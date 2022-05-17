@@ -1,6 +1,6 @@
 package pl.edu.pwr.simulation.genetics.genetypes;
 
-import pl.edu.pwr.simulation.GeneDecoder;
+import pl.edu.pwr.simulation.genetics.GeneDecoder;
 import pl.edu.pwr.simulation.genetics.GeneData;
 import pl.edu.pwr.simulation.genetics.IGene;
 

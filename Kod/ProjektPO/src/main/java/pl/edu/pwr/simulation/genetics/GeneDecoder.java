@@ -1,4 +1,4 @@
-package pl.edu.pwr.simulation;
+package pl.edu.pwr.simulation.genetics;
 
 import pl.edu.pwr.simulation.genetics.genetypes.EyeColorGene;
 import pl.edu.pwr.simulation.genetics.genetypes.GenderGene;
