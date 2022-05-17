@@ -5,7 +5,7 @@ import pl.edu.pwr.simulation.genetics.genetypes.*;
 import java.util.HashMap;
 import java.util.Map;
 
-public class GenotypeBuilder extends Genotype {
+public class GenotypeBuilder {
     private Map<String, IGene> genotype;
 
     public GenotypeBuilder() {

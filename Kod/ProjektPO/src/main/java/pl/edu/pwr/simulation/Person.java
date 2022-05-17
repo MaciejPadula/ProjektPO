@@ -2,7 +2,7 @@ package pl.edu.pwr.simulation;
 
 import pl.edu.pwr.simulation.genetics.Genotype;
 
-public class Person extends Genotype {
+public class Person {
     private int age=0;
     private Genotype genotype;
     private Person partner = null;

@@ -3,7 +3,7 @@ package pl.edu.pwr.simulation;
 import pl.edu.pwr.simulation.genetics.Genotype;
 import pl.edu.pwr.simulation.genetics.GenotypeBuilder;
 
-public class PersonBuilder extends Person {
+public class PersonBuilder {
     Genotype genotype;
 
     public PersonBuilder() {
