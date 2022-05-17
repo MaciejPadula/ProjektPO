@@ -2,37 +2,23 @@ package pl.edu.pwr.simulation;
 
 import pl.edu.pwr.simulation.genetics.Genotype;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class Person {
+public class Person extends Genotype {
     private int age=0;
     private Genotype genotype;
-    private Person[] parents;
-    private List<Person> childred;
-
-    public Person(Genotype genotype, Person[] parents) {
-        this.parents = parents;
-        this.childred = new ArrayList<>();
+    private Person partner = null;
+    public Person(Genotype genotype) {
         this.genotype = genotype;
+    }
+    public void increseAge(){
+        ++age;
     }
 
     public int getAge() {
         return age;
     }
 
-    public void addChild(Person child){
-        this.childred.add(child);
-    }
-    public List<Person> getChildred() {
-        return childred;
-    }
-    public void killChild(Person child){
-        this.childred.remove(child);
-    }
-
-    public Person[] getParents() {
-        return parents;
+    public void setPartner(Person person){
+        this.partner = person;
     }
 
     public Genotype getGenotype() {

@@ -20,6 +20,7 @@ public class GeneData {
     public String toString() {
         return String.valueOf(getGeneValue());
     }
+
     public static GeneData randomGeneData(int min, int max){
         return new GeneData(new Random().nextInt(min, max-min+1));
     }

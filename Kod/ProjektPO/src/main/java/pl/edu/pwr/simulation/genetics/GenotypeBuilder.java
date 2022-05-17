@@ -1,14 +1,11 @@
 package pl.edu.pwr.simulation.genetics;
 
-import pl.edu.pwr.simulation.genetics.genetypes.EyeColorGene;
-import pl.edu.pwr.simulation.genetics.genetypes.GenderGene;
-import pl.edu.pwr.simulation.genetics.genetypes.HairColorGene;
-import pl.edu.pwr.simulation.genetics.genetypes.SkinColorGene;
+import pl.edu.pwr.simulation.genetics.genetypes.*;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class GenotypeBuilder {
+public class GenotypeBuilder extends Genotype {
     private Map<String, IGene> genotype;
 
     public GenotypeBuilder() {
@@ -17,6 +14,8 @@ public class GenotypeBuilder {
         this.genotype.put("hairColor", new HairColorGene(GeneData.randomGeneData(0,3)));
         this.genotype.put("eyeColor", new EyeColorGene(GeneData.randomGeneData(0,3)));
         this.genotype.put("skinColor", new SkinColorGene(GeneData.randomGeneData(0,2)));
+        this.genotype.put("maxAge", new MaxAgeGene(GeneData.randomGeneData(0,99)));
+        this.genotype.put("height", new HeightGene(GeneData.randomGeneData(50,220)));
     }
 
     public GenotypeBuilder withGender(GeneData geneData){
@@ -36,6 +35,16 @@ public class GenotypeBuilder {
 
     public GenotypeBuilder withSkinColor(GeneData geneData){
         this.genotype.get("skinColor").setGeneData(geneData);
+        return this;
+    }
+
+    public GenotypeBuilder withMaxAge(GeneData geneData){
+        this.genotype.get("maxAge").setGeneData(geneData);
+        return this;
+    }
+
+    public GenotypeBuilder withHeight(GeneData geneData){
+        this.genotype.get("height").setGeneData(geneData);
         return this;
     }
 

@@ -1,6 +1,6 @@
 package pl.edu.pwr.simulation.genetics;
 
-import pl.edu.pwr.simulation.genetics.genetypes.*;
+import pl.edu.pwr.simulation.Person;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -11,7 +11,9 @@ public class Genotype {
     public Genotype(List<IGene> genotype) {
         this.genotype = genotype;
     }
-
+    public List<IGene> getGenotype(){
+        return genotype;
+    }
     public GeneData getGeneByType(String geneType){
         return this.genotype
                 .stream()
