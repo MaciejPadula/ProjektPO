@@ -13,7 +13,7 @@ public class Person {
     public Person(Genotype genotype) {
         this.genotype = genotype;
     }
-    public void increseAge(){
+    public void increaseAge(){
         ++age;
     }
 

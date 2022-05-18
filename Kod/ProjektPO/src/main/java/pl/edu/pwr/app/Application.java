@@ -1,5 +1,7 @@
 package pl.edu.pwr.app;
 
+import pl.edu.pwr.app.arguments.ApplicationArguments;
+import pl.edu.pwr.app.arguments.ArgumentParser;
 import pl.edu.pwr.simulation.Simulation;
 
 public class Application extends ArgumentParser {

@@ -1,9 +1,6 @@
 package pl.edu.pwr.simulation.genetics;
 
-import pl.edu.pwr.simulation.genetics.genetypes.EyeColorGene;
-import pl.edu.pwr.simulation.genetics.genetypes.GenderGene;
-import pl.edu.pwr.simulation.genetics.genetypes.HairColorGene;
-import pl.edu.pwr.simulation.genetics.genetypes.SkinColorGene;
+import pl.edu.pwr.simulation.genetics.genetypes.*;
 
 public class GeneDecoder {
     String[] genderGenes = {"Male", "Female"};

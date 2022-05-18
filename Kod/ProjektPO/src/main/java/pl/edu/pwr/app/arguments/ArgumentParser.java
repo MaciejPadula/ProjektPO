@@ -1,4 +1,4 @@
-package pl.edu.pwr.app;
+package pl.edu.pwr.app.arguments;
 
 public class ArgumentParser {
     public ApplicationArguments parse(String[] args) {

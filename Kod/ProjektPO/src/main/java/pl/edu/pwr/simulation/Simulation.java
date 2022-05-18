@@ -1,6 +1,6 @@
 package pl.edu.pwr.simulation;
 
-import pl.edu.pwr.app.ApplicationArguments;
+import pl.edu.pwr.app.arguments.ApplicationArguments;
 import pl.edu.pwr.simulation.probability.Probability;
 
 import java.util.ArrayList;
@@ -40,7 +40,7 @@ public class Simulation extends Probability {
     }
 
     private void epoch(int epochIndex){
-        personList.forEach(person -> person.increseAge());
+        personList.forEach(person -> person.increaseAge());
         this.personList = killer.survivors(this.personList);
         System.out.println(epochIndex+" => "+personList.size());
     }
