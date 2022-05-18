@@ -1,8 +1,7 @@
 package pl.edu.pwr.simulation.genetics;
 
-import pl.edu.pwr.simulation.Person;
 
-import java.util.*;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class Genotype {

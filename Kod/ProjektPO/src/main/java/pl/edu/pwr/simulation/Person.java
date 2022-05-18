@@ -1,11 +1,15 @@
 package pl.edu.pwr.simulation;
 
 import pl.edu.pwr.simulation.genetics.Genotype;
+import pl.edu.pwr.simulation.genetics.GenotypeBuilder;
 
 public class Person {
     private int age=0;
     private Genotype genotype;
     private Person partner = null;
+    public Person(){
+        this.genotype = new GenotypeBuilder().build();
+    }
     public Person(Genotype genotype) {
         this.genotype = genotype;
     }
