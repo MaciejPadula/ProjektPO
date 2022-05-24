@@ -3,8 +3,10 @@ package pl.edu.pwr.simulation;
 import pl.edu.pwr.simulation.genetics.Genotype;
 import pl.edu.pwr.simulation.genetics.GenotypeBuilder;
 
+import java.util.Random;
+
 public class Person {
-    private int age=0;
+    private int age=new Random().nextInt(0, 40);
     private Genotype genotype;
     private Person partner = null;
     public Person(){
@@ -20,6 +22,8 @@ public class Person {
     public int getAge() {
         return age;
     }
+
+    public Person getPartner() {return partner;}
 
     public void setPartner(Person person){
         this.partner = person;

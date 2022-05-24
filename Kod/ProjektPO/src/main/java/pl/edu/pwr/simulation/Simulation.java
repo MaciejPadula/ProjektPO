@@ -18,8 +18,8 @@ public class Simulation extends Probability {
 
     public Simulation(ApplicationArguments applicationArguments) {
         this.probability = new Probability();
-        this.genotypeMerge = new GenotypeMerge();
-        this.matchmaker = new Matchmaker();
+        this.genotypeMerge = new GenotypeMerge(applicationArguments, probability);
+        this.matchmaker = new Matchmaker(applicationArguments, probability);
         this.pregnancy = new Pregnancy();
         this.killer = new Killer(applicationArguments, probability);
 
@@ -42,6 +42,7 @@ public class Simulation extends Probability {
     private void epoch(int epochIndex){
         personList.forEach(person -> person.increaseAge());
         this.personList = killer.survivors(this.personList);
-        System.out.println(epochIndex+" => "+personList.size());
+        matchmaker.matchAll(this.personList);
+        System.out.println(epochIndex + " => "+personList.size());
     }
 }

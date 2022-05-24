@@ -15,7 +15,7 @@ public class GenotypeBuilder {
         this.genotype.put("eyeColor", new EyeColorGene(GeneData.randomGeneData(0,3)));
         this.genotype.put("skinColor", new SkinColorGene(GeneData.randomGeneData(0,2)));
         this.genotype.put("maxAge", new MaxAgeGene(GeneData.randomGeneData(0,99)));
-        this.genotype.put("height", new HeightGene(GeneData.randomGeneData(50,220)));
+        this.genotype.put("height", new HeightGene(GeneData.randomGeneData(120,220)));
     }
 
     public GenotypeBuilder withGender(GeneData geneData){

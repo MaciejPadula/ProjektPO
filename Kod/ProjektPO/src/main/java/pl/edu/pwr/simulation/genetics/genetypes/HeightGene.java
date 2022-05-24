@@ -1,6 +1,7 @@
 package pl.edu.pwr.simulation.genetics.genetypes;
 
 import pl.edu.pwr.simulation.genetics.GeneData;
+import pl.edu.pwr.simulation.genetics.GeneDecoder;
 import pl.edu.pwr.simulation.genetics.IGene;
 
 public class HeightGene implements IGene {
@@ -23,5 +24,9 @@ public class HeightGene implements IGene {
     @Override
     public GeneData getGeneData() {
         return geneData;
+    }
+    @Override
+    public String toString() {
+        return this.getGeneType() + ": " + getGeneData();
     }
 }
