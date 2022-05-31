@@ -4,5 +4,6 @@
   "outputFile": "output.json",
   "percentageOfDeath": 10,
   "percentageOfMatch": 15,
-  "percentageOfGeneDegradation": 80
+  "percentageOfGeneDegradation": 80,
+  "percentageOfPregnancy": 50
 }

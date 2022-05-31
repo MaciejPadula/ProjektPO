@@ -9,6 +9,7 @@ public class ApplicationArguments {
     private final int percentageOfDeath;
     private final int percentageOfMatch;
     private final int percentageOfGeneDegradation;
+    private final int percentageOfPregnancy;
     public ApplicationArguments(Config config) {
         this.numberOfEpoch = config.getInt("numberOfEpoch");
         this.numberOfPeople = config.getInt("numberOfPeople");
@@ -16,6 +17,7 @@ public class ApplicationArguments {
         this.percentageOfDeath = config.getInt("percentageOfDeath");
         this.percentageOfMatch = config.getInt("percentageOfMatch");
         this.percentageOfGeneDegradation = config.getInt("percentageOfGeneDegradation");
+        this.percentageOfPregnancy = config.getInt("percentageOfPregnancy");
     }
 
     public int getNumberOfEpoch() {
@@ -35,5 +37,8 @@ public class ApplicationArguments {
     }
     public int getPercentageOfGeneDegradation() {
         return percentageOfGeneDegradation;
+    }
+    public int getPercentageOfPregnancy() {
+        return percentageOfPregnancy;
     }
 }

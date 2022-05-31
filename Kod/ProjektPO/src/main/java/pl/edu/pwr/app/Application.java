@@ -18,5 +18,7 @@ public class Application extends ArgumentParser {
         ApplicationArguments applicationArguments = new ApplicationArguments(config);
         Simulation simulation = new Simulation(applicationArguments);
         System.out.println(simulation.simulate());
+
+        //System.out.println(simulation.getHeights());
     }
 }

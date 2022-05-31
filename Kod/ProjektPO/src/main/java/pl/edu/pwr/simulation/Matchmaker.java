@@ -22,7 +22,7 @@ public class Matchmaker {
             });
         });
     }
-    public void match(Person person1, Person person2){
+    private void match(Person person1, Person person2){
         if(probability.percentage(applicationArguments.getPercentageOfMatch())){
             if(person1.getAge()>=18 && person2.getAge()>=18){
                 person1.setPartner(person2);

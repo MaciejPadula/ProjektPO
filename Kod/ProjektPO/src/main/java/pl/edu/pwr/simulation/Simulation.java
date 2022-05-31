@@ -17,13 +17,12 @@ public class Simulation extends Probability {
     private List<Person> personList;
 
     public Simulation(ApplicationArguments applicationArguments) {
+        this.applicationArguments = applicationArguments;
         this.probability = new Probability();
         this.genotypeMerge = new GenotypeMerge(applicationArguments, probability);
         this.matchmaker = new Matchmaker(applicationArguments, probability);
-        this.pregnancy = new Pregnancy();
+        this.pregnancy = new Pregnancy(this.applicationArguments, this.genotypeMerge, this.probability);
         this.killer = new Killer(applicationArguments, probability);
-
-        this.applicationArguments = applicationArguments;
 
         this.personList = new ArrayList<>();
         for(int i=0;i<applicationArguments.getNumberOfPeople();++i){
@@ -42,7 +41,14 @@ public class Simulation extends Probability {
     private void epoch(int epochIndex){
         personList.forEach(person -> person.increaseAge());
         this.personList = killer.survivors(this.personList);
+        personList.addAll(pregnancy.getNewborn(personList));
         matchmaker.matchAll(this.personList);
         System.out.println(epochIndex + " => "+personList.size());
+    }
+
+    public List<Integer> getHeights(){
+        List<Integer> heights = new ArrayList<>();
+        this.personList.forEach(person -> heights.add(person.getGenotype().getGeneByType("height").getGeneValue()));
+        return heights;
     }
 }
