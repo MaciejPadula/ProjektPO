@@ -1,6 +1,5 @@
 package pl.edu.pwr.simulation.output;
 
-import pl.edu.pwr.gson.GenotypeJsonObject;
 import pl.edu.pwr.gson.GenotypeObjectRepository;
 import pl.edu.pwr.simulation.Person;
 

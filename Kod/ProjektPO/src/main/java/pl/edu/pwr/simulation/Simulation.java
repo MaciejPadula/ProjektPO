@@ -33,7 +33,6 @@ public class Simulation extends Probability {
         for(int i=0;i<applicationArguments.getNumberOfPeople();++i){
             this.personList.add(new Person());
         }
-        System.out.println(this.personList);
     }
 
     public void simulate(){

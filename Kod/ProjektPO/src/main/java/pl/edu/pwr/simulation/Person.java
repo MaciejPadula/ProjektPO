@@ -6,7 +6,7 @@ import pl.edu.pwr.simulation.genetics.GenotypeBuilder;
 import java.util.Random;
 
 public class Person {
-    private int age=new Random().nextInt(0, 40);
+    private int age=new Random().nextInt(40);
     private Genotype genotype;
     private Person partner = null;
     public Person(){
