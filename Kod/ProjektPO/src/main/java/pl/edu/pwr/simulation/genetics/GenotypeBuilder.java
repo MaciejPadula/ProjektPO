@@ -1,54 +1,44 @@
 package pl.edu.pwr.simulation.genetics;
 
-import pl.edu.pwr.simulation.genetics.genetypes.*;
-
-import java.util.HashMap;
-import java.util.Map;
-
 public class GenotypeBuilder {
-    private Map<String, IGene> genotype;
+    private Gene gender = Gene.randomGender();
+    private Gene skinColor = Gene.randomSkinColor();
+    private Gene eyeColor = Gene.randomEyeColor();
+    private Gene hairColor = Gene.randomHairColor();
+    private Gene maxAge = Gene.randomMaxAge();
+    private Gene height = Gene.randomHeight();
 
-    public GenotypeBuilder() {
-        this.genotype = new HashMap<>();
-        this.genotype.put("gender", new GenderGene(GeneData.randomGeneData(0,1)));
-        this.genotype.put("hairColor", new HairColorGene(GeneData.randomGeneData(0,3)));
-        this.genotype.put("eyeColor", new EyeColorGene(GeneData.randomGeneData(0,3)));
-        this.genotype.put("skinColor", new SkinColorGene(GeneData.randomGeneData(0,2)));
-        this.genotype.put("maxAge", new MaxAgeGene(GeneData.randomGeneData(0,99)));
-        this.genotype.put("height", new HeightGene(GeneData.randomGeneData(120,220)));
-    }
-
-    public GenotypeBuilder withGender(GeneData geneData){
-        this.genotype.get("gender").setGeneData(geneData);
+    public GenotypeBuilder withGender(int geneData){
+        this.gender = new Gene(geneData);
         return this;
     }
 
-    public GenotypeBuilder withHairColor(GeneData geneData){
-        this.genotype.get("hairColor").setGeneData(geneData);
+    public GenotypeBuilder withHairColor(int geneData){
+        this.hairColor = new Gene(geneData);
         return this;
     }
 
-    public GenotypeBuilder withEyeColor(GeneData geneData){
-        this.genotype.get("eyeColor").setGeneData(geneData);
+    public GenotypeBuilder withEyeColor(int geneData){
+        this.eyeColor = new Gene(geneData);
         return this;
     }
 
-    public GenotypeBuilder withSkinColor(GeneData geneData){
-        this.genotype.get("skinColor").setGeneData(geneData);
+    public GenotypeBuilder withSkinColor(int geneData){
+        this.skinColor = new Gene(geneData);
         return this;
     }
 
-    public GenotypeBuilder withMaxAge(GeneData geneData){
-        this.genotype.get("maxAge").setGeneData(geneData);
+    public GenotypeBuilder withMaxAge(int geneData){
+        this.maxAge = new Gene(geneData);
         return this;
     }
 
-    public GenotypeBuilder withHeight(GeneData geneData){
-        this.genotype.get("height").setGeneData(geneData);
+    public GenotypeBuilder withHeight(int geneData){
+        this.height = new Gene(geneData);
         return this;
     }
 
     public Genotype build(){
-        return new Genotype(genotype.values().stream().toList());
+        return new Genotype(gender, skinColor, eyeColor, hairColor,height, maxAge);
     }
 }

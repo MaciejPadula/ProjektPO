@@ -34,7 +34,7 @@ public class Person {
     }
 
     public int getGender(){
-        return this.genotype.getGeneByType("gender").getGeneValue();
+        return this.genotype.getGender().getGeneData();
     }
 
     @Override

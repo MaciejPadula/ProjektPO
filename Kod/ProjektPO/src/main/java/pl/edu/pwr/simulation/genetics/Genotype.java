@@ -1,29 +1,45 @@
 package pl.edu.pwr.simulation.genetics;
 
 
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class Genotype {
-    private List<IGene> genotype;
+    private final Gene gender;
+    private final Gene skinColor;
+    private final Gene eyeColor;
+    private final Gene hairColor;
+    private final Gene height;
+    private final Gene maxAge;
 
-    public Genotype(List<IGene> genotype) {
-        this.genotype = genotype;
-    }
-    public List<IGene> getGenotype(){
-        return genotype;
-    }
-    public GeneData getGeneByType(String geneType){
-        return this.genotype
-                .stream()
-                .filter(gene -> gene.getGeneType() == geneType)
-                .collect(Collectors.toList())
-                .get(0)
-                .getGeneData();
+    public Genotype(Gene gender, Gene skinColor, Gene eyeColor, Gene hairColor, Gene height, Gene maxAge) {
+        this.gender = gender;
+        this.skinColor = skinColor;
+        this.eyeColor = eyeColor;
+        this.hairColor = hairColor;
+        this.height = height;
+        this.maxAge = maxAge;
     }
 
-    @Override
-    public String toString() {
-        return "Genotype" + genotype;
+    public Gene getGender() {
+        return gender;
+    }
+
+    public Gene getSkinColor() {
+        return skinColor;
+    }
+
+    public Gene getEyeColor() {
+        return eyeColor;
+    }
+
+    public Gene getHairColor() {
+        return hairColor;
+    }
+
+    public Gene getHeight() {
+        return height;
+    }
+
+    public Gene getMaxAge() {
+        return maxAge;
     }
 }

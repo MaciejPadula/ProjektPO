@@ -1,8 +1,9 @@
-package pl.edu.pwr.simulation;
+package pl.edu.pwr.simulation.events;
 
 
 import pl.edu.pwr.app.arguments.ApplicationArguments;
-import pl.edu.pwr.simulation.genetics.Genotype;
+import pl.edu.pwr.simulation.genetics.GenotypeMerge;
+import pl.edu.pwr.simulation.Person;
 import pl.edu.pwr.simulation.probability.Probability;
 
 import java.util.ArrayList;

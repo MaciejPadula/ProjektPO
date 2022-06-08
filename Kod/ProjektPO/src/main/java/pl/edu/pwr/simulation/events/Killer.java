@@ -1,11 +1,11 @@
-package pl.edu.pwr.simulation;
+package pl.edu.pwr.simulation.events;
 
 import pl.edu.pwr.app.arguments.ApplicationArguments;
+import pl.edu.pwr.simulation.Person;
 import pl.edu.pwr.simulation.probability.Probability;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Killer {
     ApplicationArguments applicationArguments;
@@ -20,8 +20,8 @@ public class Killer {
         personList.forEach(person -> {
             if(person.getAge() <= person
                     .getGenotype()
-                    .getGeneByType("maxAge")
-                    .getGeneValue() || this.probability.percentage(applicationArguments.getPercentageOfDeath())){
+                    .getMaxAge()
+                    .getGeneData() || this.probability.percentage(applicationArguments.getPercentageOfDeath())){
                 newPersonList.add(person);
             }
             else{

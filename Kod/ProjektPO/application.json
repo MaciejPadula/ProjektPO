@@ -1,6 +1,7 @@
 {
   "numberOfEpoch": 75,
   "numberOfPeople": 25,
+  "fileOutputEnabled": false,
   "outputFile": "output.json",
   "percentageOfDeath": 50,
   "percentageOfMatch": 20,
