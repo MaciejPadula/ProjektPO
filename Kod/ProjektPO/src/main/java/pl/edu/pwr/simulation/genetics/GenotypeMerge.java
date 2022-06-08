@@ -30,7 +30,7 @@ public class GenotypeMerge {
             maxAge = age;
         }
         maxAgeGene = minAge+(new Random().nextInt(
-                maxAge-minAge
+                maxAge-minAge+1
         ));
 
         if(coverage(genotype1, genotype2)>=applicationArguments.getPercentageOfGeneDegradation()){
