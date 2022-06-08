@@ -7,6 +7,5 @@ import pl.edu.pwr.simulation.Person;
 import java.util.List;
 
 public interface ISimulationOutput {
-    Gson gson = new GsonBuilder().setPrettyPrinting().create();
     void dumpData(List<Person> personList);
 }
