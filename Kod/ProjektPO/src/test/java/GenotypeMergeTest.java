@@ -1,17 +1,17 @@
 import com.typesafe.config.*;
 import org.junit.jupiter.api.Test;
-import pl.edu.pwr.app.arguments.ApplicationArguments;
+import pl.edu.pwr.app.settings.ApplicationSettings;
 import pl.edu.pwr.simulation.genetics.GenotypeMerge;
 import pl.edu.pwr.simulation.genetics.Genotype;
 import pl.edu.pwr.simulation.genetics.GenotypeBuilder;
-import pl.edu.pwr.simulation.probability.Probability;
+import pl.edu.pwr.simulation.utils.Probability;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class GenotypeMergeTest {
     Probability probability = new Probability();
-    ApplicationArguments applicationArguments = new ApplicationArguments(ConfigFactory.load());
-    GenotypeMerge genotypeMerge = new GenotypeMerge(applicationArguments, probability);
+    ApplicationSettings applicationArguments = new ApplicationSettings(ConfigFactory.load());
+    GenotypeMerge genotypeMerge = new GenotypeMerge(applicationArguments);
     @Test
     public void coverageTest(){
         Genotype genotype1 = new GenotypeBuilder()

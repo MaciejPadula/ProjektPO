@@ -2,10 +2,10 @@ package pl.edu.pwr.gson;
 
 
 class GeneDecoder {
-    String[] genderGenes = {"Male", "Female", "Unknown"};
-    String[] skinColorGenes = {"White", "Black", "Asian"};
-    String[] eyeColorGenes = {"Blue", "Brown", "Green", "Red"};
-    String[] hairColorGenes = {"Blond", "Brown", "Auburn", "White"};
+    private String[] genderGenes = {"Male", "Female", "Unknown"};
+    private String[] skinColorGenes = {"White", "Black", "Asian"};
+    private String[] eyeColorGenes = {"Blue", "Brown", "Green", "Red"};
+    private String[] hairColorGenes = {"Blond", "Brown", "Auburn", "White"};
     public String decodeGender(int val){
         return genderGenes[val];
     }

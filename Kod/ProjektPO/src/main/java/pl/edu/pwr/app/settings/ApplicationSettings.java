@@ -1,8 +1,8 @@
-package pl.edu.pwr.app.arguments;
+package pl.edu.pwr.app.settings;
 
 import com.typesafe.config.Config;
 
-public class ApplicationArguments {
+public class ApplicationSettings {
     private final int numberOfEpoch;
     private final int numberOfPeople;
     private final String outputFile;
@@ -10,7 +10,7 @@ public class ApplicationArguments {
     private final int percentageOfMatch;
     private final int percentageOfGeneDegradation;
     private final int percentageOfPregnancy;
-    public ApplicationArguments(Config config) {
+    public ApplicationSettings(Config config) {
         this.numberOfEpoch = config.getInt("numberOfEpoch");
         this.numberOfPeople = config.getInt("numberOfPeople");
         this.outputFile = config.getString("outputFile");
@@ -19,7 +19,6 @@ public class ApplicationArguments {
         this.percentageOfGeneDegradation = config.getInt("percentageOfGeneDegradation");
         this.percentageOfPregnancy = config.getInt("percentageOfPregnancy");
     }
-
     public int getNumberOfEpoch() {
     return numberOfEpoch;
     }

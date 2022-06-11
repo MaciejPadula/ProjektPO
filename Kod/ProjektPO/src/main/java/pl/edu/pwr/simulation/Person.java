@@ -36,9 +36,4 @@ public class Person {
     public int getGender(){
         return this.genotype.getGender().getGeneData();
     }
-
-    @Override
-    public String toString() {
-        return "Person{ "+this.age+": "+this.getGenotype()+" }";
-    }
 }

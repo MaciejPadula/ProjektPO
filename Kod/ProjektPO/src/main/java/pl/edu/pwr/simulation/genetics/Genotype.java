@@ -1,7 +1,5 @@
 package pl.edu.pwr.simulation.genetics;
 
-
-
 public class Genotype {
     private final Gene gender;
     private final Gene skinColor;

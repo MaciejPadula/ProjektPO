@@ -1,22 +1,20 @@
 package pl.edu.pwr.simulation.events;
 
 
-import pl.edu.pwr.app.arguments.ApplicationArguments;
+import pl.edu.pwr.app.settings.ApplicationSettings;
 import pl.edu.pwr.simulation.genetics.GenotypeMerge;
 import pl.edu.pwr.simulation.Person;
-import pl.edu.pwr.simulation.probability.Probability;
+import pl.edu.pwr.simulation.utils.Probability;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Pregnancy {
     private GenotypeMerge genotypeMerge;
-    private ApplicationArguments applicationArguments;
-    private Probability probability;
-    public Pregnancy(ApplicationArguments applicationArguments, GenotypeMerge genotypeMerge, Probability probability) {
-        this.genotypeMerge = genotypeMerge;
-        this.applicationArguments = applicationArguments;
-        this.probability = probability;
+    private ApplicationSettings applicationSettings;
+    public Pregnancy(ApplicationSettings applicationSettings) {
+        this.applicationSettings = applicationSettings;
+        genotypeMerge = new GenotypeMerge(applicationSettings);
     }
     public List<Person> getNewborn(List<Person> personList){
         List<Person> people = new ArrayList<>();
@@ -50,11 +48,11 @@ public class Pregnancy {
                 female = person.getPartner();
             }
             if(female.getAge()>=18 && female.getAge()<35){
-                return probability.percentage(applicationArguments.getPercentageOfPregnancy());
+                return Probability.getOutcome(applicationSettings.getPercentageOfPregnancy());
             }else if( female.getAge()>=35 && female.getAge()<40){
-                return probability.percentage((applicationArguments.getPercentageOfPregnancy())/2);
+                return Probability.getOutcome((applicationSettings.getPercentageOfPregnancy())/2);
             }else if(female.getAge()>=40 && female.getAge()<50){
-                return probability.percentage((applicationArguments.getPercentageOfPregnancy())/5);
+                return Probability.getOutcome((applicationSettings.getPercentageOfPregnancy())/5);
             }
         }
         return false;

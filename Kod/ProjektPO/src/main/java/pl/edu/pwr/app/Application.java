@@ -1,12 +1,12 @@
 package pl.edu.pwr.app;
 
-import pl.edu.pwr.app.arguments.ArgumentParser;
 import pl.edu.pwr.simulation.Simulation;
+import pl.edu.pwr.simulation.SimulationConfigurer;
 
 
-public class Application extends ArgumentParser {
+public class Application {
     public static void main(String[] args){
-        Simulation simulation = new SimulationConfigurer().configure();
+        Simulation simulation = SimulationConfigurer.configure();
         simulation.simulate();
         simulation.dumpData();
     }

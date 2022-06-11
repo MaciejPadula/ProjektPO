@@ -1,18 +1,16 @@
 package pl.edu.pwr.simulation.events;
 
-import pl.edu.pwr.app.arguments.ApplicationArguments;
+import pl.edu.pwr.app.settings.ApplicationSettings;
 import pl.edu.pwr.simulation.Person;
-import pl.edu.pwr.simulation.probability.Probability;
+import pl.edu.pwr.simulation.utils.Probability;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Killer {
-    ApplicationArguments applicationArguments;
-    Probability probability;
-    public Killer(ApplicationArguments applicationArguments, Probability probability) {
-        this.applicationArguments = applicationArguments;
-        this.probability = probability;
+    ApplicationSettings applicationSettings;
+    public Killer(ApplicationSettings applicationArguments) {
+        this.applicationSettings = applicationArguments;
     }
 
     public List<Person> survivors(List<Person> personList){
@@ -21,7 +19,7 @@ public class Killer {
             if(person.getAge() <= person
                     .getGenotype()
                     .getMaxAge()
-                    .getGeneData() || this.probability.percentage(applicationArguments.getPercentageOfDeath())){
+                    .getGeneData() || Probability.getOutcome(applicationSettings.getPercentageOfDeath())){
                 newPersonList.add(person);
             }
             else{

@@ -1,18 +1,16 @@
 package pl.edu.pwr.simulation.events;
 
-import pl.edu.pwr.app.arguments.ApplicationArguments;
+import pl.edu.pwr.app.settings.ApplicationSettings;
 import pl.edu.pwr.simulation.Person;
-import pl.edu.pwr.simulation.probability.Probability;
+import pl.edu.pwr.simulation.utils.Probability;
 
 import java.util.List;
 
 public class Matchmaker {
-    ApplicationArguments applicationArguments;
-    Probability probability;
+    ApplicationSettings applicationSettings;
 
-    public Matchmaker(ApplicationArguments applicationArguments, Probability probability) {
-        this.applicationArguments = applicationArguments;
-        this.probability = probability;
+    public Matchmaker(ApplicationSettings applicationArguments) {
+        this.applicationSettings = applicationArguments;
     }
     public void matchAll(List<Person> personList){
         personList.forEach(person1 -> {
@@ -24,7 +22,7 @@ public class Matchmaker {
         });
     }
     private void match(Person person1, Person person2){
-        if(probability.percentage(applicationArguments.getPercentageOfMatch())){
+        if(Probability.getOutcome(applicationSettings.getPercentageOfMatch())){
             if(person1.getAge()>=18 && person2.getAge()>=18){
                 person1.setPartner(person2);
                 person2.setPartner(person1);
