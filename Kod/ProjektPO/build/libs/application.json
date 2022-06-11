@@ -1,10 +1,10 @@
 {
   "numberOfEpoch": 100,
-  "numberOfPeople": 10,
+  "numberOfPeople": 30,
   "fileOutputEnabled": true,
   "outputFile": "output.json",
   "percentageOfDeath": 50,
-  "percentageOfMatch": 20,
+  "percentageOfMatch": 30,
   "percentageOfGeneDegradation": 80,
-  "percentageOfPregnancy": 15
+  "percentageOfPregnancy": 30
 }

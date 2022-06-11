@@ -1,7 +1,7 @@
 package pl.edu.pwr.gson;
 
 
-class GeneDecoder {
+public class GeneDecoder {
     private String[] genderGenes = {"Male", "Female", "Unknown"};
     private String[] skinColorGenes = {"White", "Black", "Asian"};
     private String[] eyeColorGenes = {"Blue", "Brown", "Green", "Red"};
