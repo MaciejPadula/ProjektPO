@@ -5,12 +5,11 @@ import pl.edu.pwr.simulation.events.Killer;
 import pl.edu.pwr.simulation.events.Matchmaker;
 import pl.edu.pwr.simulation.events.Pregnancy;
 import pl.edu.pwr.simulation.output.ISimulationDumper;
-import pl.edu.pwr.simulation.utils.Probability;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Simulation extends Probability {
+public class Simulation {
     private final ISimulationDumper simulationDumper;
     private final ApplicationSettings applicationArguments;
     private final Matchmaker matchmaker;
@@ -21,14 +20,14 @@ public class Simulation extends Probability {
 
     public Simulation(ApplicationSettings applicationArguments, ISimulationDumper simulationOutput) {
         this.applicationArguments = applicationArguments;
-        this.matchmaker = new Matchmaker(applicationArguments);
-        this.pregnancy = new Pregnancy(this.applicationArguments);
-        this.killer = new Killer(applicationArguments);
+        this.matchmaker = new Matchmaker(this.applicationArguments.getPercentageOfMatch());
+        this.pregnancy = new Pregnancy(this.applicationArguments.getPercentageOfPregnancy(), this.applicationArguments.getPercentageOfGeneDegradation());
+        this.killer = new Killer(this.applicationArguments.getPercentageOfDeath());
         this.simulationDumper = simulationOutput;
 
         this.personList = new ArrayList<>();
         for(int i=0;i<applicationArguments.getNumberOfPeople();++i){
-            this.personList.add(new Person());
+            this.personList.add(PersonCreator.createRandom());
         }
     }
 

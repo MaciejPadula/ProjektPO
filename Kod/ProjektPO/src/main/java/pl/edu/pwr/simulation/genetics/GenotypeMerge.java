@@ -6,9 +6,9 @@ import pl.edu.pwr.simulation.utils.Probability;
 import java.util.Random;
 
 public class GenotypeMerge {
-    ApplicationSettings applicationSettings;
-    public GenotypeMerge(ApplicationSettings applicationArguments) {
-        this.applicationSettings = applicationArguments;
+    int percentageOfGeneDegradation = 0;
+    public GenotypeMerge(int percentageOfGeneDegradation) {
+        this.percentageOfGeneDegradation = percentageOfGeneDegradation;
     }
 
     public Genotype mergeGenotype(Genotype genotype1, Genotype genotype2) {
@@ -30,7 +30,7 @@ public class GenotypeMerge {
                 maxAge-minAge+1
         ));
 
-        if(coverage(genotype1, genotype2)>= applicationSettings.getPercentageOfGeneDegradation()){
+        if(coverage(genotype1, genotype2)>= percentageOfGeneDegradation){
             genderGene = 2;
         }
         return new GenotypeBuilder()

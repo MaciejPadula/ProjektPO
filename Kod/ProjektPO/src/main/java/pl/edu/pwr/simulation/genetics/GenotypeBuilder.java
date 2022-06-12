@@ -1,12 +1,12 @@
 package pl.edu.pwr.simulation.genetics;
 
 public class GenotypeBuilder {
-    private Gene gender = Gene.randomGender();
-    private Gene skinColor = Gene.randomSkinColor();
-    private Gene eyeColor = Gene.randomEyeColor();
-    private Gene hairColor = Gene.randomHairColor();
-    private Gene maxAge = Gene.randomMaxAge();
-    private Gene height = Gene.randomHeight();
+    private Gene gender = GeneUtils.randomGender();
+    private Gene skinColor = GeneUtils.randomSkinColor();
+    private Gene eyeColor = GeneUtils.randomEyeColor();
+    private Gene hairColor = GeneUtils.randomHairColor();
+    private Gene maxAge = GeneUtils.randomMaxAge();
+    private Gene height = GeneUtils.randomHeight();
 
     public GenotypeBuilder withGender(int geneData){
         this.gender = new Gene(geneData);

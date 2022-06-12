@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Killer {
-    ApplicationSettings applicationSettings;
-    public Killer(ApplicationSettings applicationArguments) {
-        this.applicationSettings = applicationArguments;
+    int percentageOfDeath=0;
+    public Killer(int percentageOfDeath) {
+        this.percentageOfDeath = percentageOfDeath;
     }
 
     public List<Person> survivors(List<Person> personList){
@@ -19,7 +19,7 @@ public class Killer {
             if(person.getAge() <= person
                     .getGenotype()
                     .getMaxAge()
-                    .getGeneData() || Probability.getOutcome(applicationSettings.getPercentageOfDeath())){
+                    .getGeneData() || Probability.getOutcome(percentageOfDeath)){
                 newPersonList.add(person);
             }
             else{

@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class GenotypeMergeTest {
     ApplicationSettings applicationArguments = new ApplicationSettings(ConfigFactory.load());
-    GenotypeMerge genotypeMerge = new GenotypeMerge(applicationArguments);
+    GenotypeMerge genotypeMerge = new GenotypeMerge(applicationArguments.getPercentageOfGeneDegradation());
     Genotype genotype1 = new GenotypeBuilder()
             .withEyeColor(1)
             .withHairColor(2)
