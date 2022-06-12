@@ -14,11 +14,9 @@ public class FileDumper implements ISimulationDumper {
     public FileDumper(String fileName) {
         this.fileName = fileName;
     }
-
     @Override
     public void dumpData(List<Person> personList){
         GenotypeObjectToJsonStringConverter genotypeObjectRepository = new GenotypeObjectToJsonStringConverter();
-
         try {
             BufferedWriter writer = null;
             writer = new BufferedWriter(new FileWriter(fileName));

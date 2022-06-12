@@ -9,17 +9,17 @@ import java.util.List;
 
 public class Killer {
     int percentageOfDeath=0;
+
     public Killer(int percentageOfDeath) {
         this.percentageOfDeath = percentageOfDeath;
     }
-
     public List<Person> survivors(List<Person> personList){
         List<Person> newPersonList = new ArrayList<>();
         personList.forEach(person -> {
             if(person.getAge() <= person
                     .getGenotype()
                     .getMaxAge()
-                    .getGeneData() || Probability.getOutcome(percentageOfDeath)){
+                    .getGeneData() || Probability.getOutcome(this.percentageOfDeath)){
                 newPersonList.add(person);
             }
             else{

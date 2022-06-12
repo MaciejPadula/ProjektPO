@@ -8,6 +8,7 @@ import java.util.List;
 
 public class Matchmaker {
     int percentageOfMatch = 0;
+
     public Matchmaker(int percentageOfMatch) {
         this.percentageOfMatch = percentageOfMatch;
     }
@@ -21,7 +22,7 @@ public class Matchmaker {
         });
     }
     private void match(Person person1, Person person2){
-        if(Probability.getOutcome(percentageOfMatch)){
+        if(Probability.getOutcome(this.percentageOfMatch)){
             if(person1.isAdult() && person2.isAdult()){
                 person1.setPartner(person2);
                 person2.setPartner(person1);

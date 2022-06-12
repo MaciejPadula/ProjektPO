@@ -1,7 +1,5 @@
 package pl.edu.pwr.simulation.events;
 
-
-import pl.edu.pwr.app.settings.ApplicationSettings;
 import pl.edu.pwr.simulation.Gender;
 import pl.edu.pwr.simulation.genetics.GenotypeMerge;
 import pl.edu.pwr.simulation.Person;
@@ -13,8 +11,9 @@ import java.util.List;
 public class Pregnancy {
     private GenotypeMerge genotypeMerge;
     int percentageOfPregnancy = 0;
+
     public Pregnancy(int percentageOfPregnancy, int percentageOfGeneDegradation) {
-        genotypeMerge = new GenotypeMerge(percentageOfGeneDegradation);
+        this.genotypeMerge = new GenotypeMerge(percentageOfGeneDegradation);
         this.percentageOfPregnancy = percentageOfPregnancy;
     }
     public List<Person> getNewborn(List<Person> personList){
@@ -49,19 +48,19 @@ public class Pregnancy {
                 female = person.getPartner();
             }
             if(female.isAdult() && female.getAge()<35){
-                return Probability.getOutcome(percentageOfPregnancy);
+                return Probability.getOutcome(this.percentageOfPregnancy);
             }else if( female.getAge()>=35 && female.getAge()<40){
-                return Probability.getOutcome((percentageOfPregnancy)/2);
+                return Probability.getOutcome((this.percentageOfPregnancy)/2);
             }else if(female.getAge()>=40 && female.getAge()<50){
-                return Probability.getOutcome((percentageOfPregnancy)/5);
+                return Probability.getOutcome((this.percentageOfPregnancy)/5);
             }
         }
         return false;
     }
     private Person pregnancy(Person person){
         return new Person(
-            0,
-            genotypeMerge.mergeGenotype(
+        0,
+            this.genotypeMerge.mergeGenotype(
                 person.getGenotype(),
                 person.getPartner().getGenotype()
             )

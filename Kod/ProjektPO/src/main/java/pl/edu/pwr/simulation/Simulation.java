@@ -15,7 +15,6 @@ public class Simulation {
     private final Matchmaker matchmaker;
     private final Pregnancy pregnancy;
     private final Killer killer;
-
     private List<Person> personList;
 
     public Simulation(ApplicationSettings applicationArguments, ISimulationDumper simulationOutput) {
@@ -30,21 +29,18 @@ public class Simulation {
             this.personList.add(PersonCreator.createRandom());
         }
     }
-
     public void simulate(){
         for(int i=0;i<applicationArguments.getNumberOfEpoch();++i){
             epoch(i+1);
         }
     }
-
     private void epoch(int epochIndex){
-        personList.forEach(person -> person.increaseAge());
-        this.personList = killer.survivors(this.personList);
-        personList.addAll(pregnancy.getNewborn(personList));
-        matchmaker.matchAll(this.personList);
-        System.out.println(epochIndex + " => "+personList.size());
+        this.personList.forEach(person -> person.increaseAge());
+        this.personList = this.killer.survivors(this.personList);
+        this.personList.addAll(this.pregnancy.getNewborn(personList));
+        this.matchmaker.matchAll(this.personList);
+        System.out.println(epochIndex + " => "+this.personList.size());
     }
-
     public void dumpData(){
         this.simulationDumper.dumpData(this.personList);
     }

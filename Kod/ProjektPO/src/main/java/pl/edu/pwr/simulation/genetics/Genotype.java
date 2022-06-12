@@ -7,7 +7,6 @@ public class Genotype {
     private final Gene hairColor;
     private final Gene height;
     private final Gene maxAge;
-
     public Genotype(Gene gender, Gene skinColor, Gene eyeColor, Gene hairColor, Gene height, Gene maxAge) {
         this.gender = gender;
         this.skinColor = skinColor;
@@ -16,28 +15,22 @@ public class Genotype {
         this.height = height;
         this.maxAge = maxAge;
     }
-
     public Gene getGender() {
-        return gender;
+        return this.gender;
     }
-
     public Gene getSkinColor() {
-        return skinColor;
+        return this.skinColor;
     }
-
     public Gene getEyeColor() {
-        return eyeColor;
+        return this.eyeColor;
     }
-
     public Gene getHairColor() {
-        return hairColor;
+        return this.hairColor;
     }
-
     public Gene getHeight() {
-        return height;
+        return this.height;
     }
-
     public Gene getMaxAge() {
-        return maxAge;
+        return this.maxAge;
     }
 }

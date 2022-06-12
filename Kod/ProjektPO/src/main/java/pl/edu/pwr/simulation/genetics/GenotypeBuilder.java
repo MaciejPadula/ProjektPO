@@ -12,33 +12,34 @@ public class GenotypeBuilder {
         this.gender = new Gene(geneData);
         return this;
     }
-
     public GenotypeBuilder withHairColor(int geneData){
         this.hairColor = new Gene(geneData);
         return this;
     }
-
     public GenotypeBuilder withEyeColor(int geneData){
         this.eyeColor = new Gene(geneData);
         return this;
     }
-
     public GenotypeBuilder withSkinColor(int geneData){
         this.skinColor = new Gene(geneData);
         return this;
     }
-
     public GenotypeBuilder withMaxAge(int geneData){
         this.maxAge = new Gene(geneData);
         return this;
     }
-
     public GenotypeBuilder withHeight(int geneData){
         this.height = new Gene(geneData);
         return this;
     }
-
     public Genotype build(){
-        return new Genotype(gender, skinColor, eyeColor, hairColor,height, maxAge);
+        return new Genotype(
+                this.gender,
+                this.skinColor,
+                this.eyeColor,
+                this.hairColor,
+                this.height,
+                this.maxAge
+        );
     }
 }

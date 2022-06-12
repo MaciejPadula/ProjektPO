@@ -17,14 +17,15 @@ public class SimulationConfigurer {
                 .withFallback(baseConfig);
 
         ApplicationSettings applicationSettings = new ApplicationSettings(config);
-
         ISimulationDumper simulationDumper;
+
         if(config.getBoolean("fileOutputEnabled")){
             simulationDumper = new FileDumper(applicationSettings.getOutputFile());
         }
         else{
             simulationDumper = new ConsoleDumper();
         }
+
         Simulation simulation = new Simulation(applicationSettings, simulationDumper);
         return simulation;
     }
