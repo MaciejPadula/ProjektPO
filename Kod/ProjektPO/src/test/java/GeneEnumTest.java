@@ -1,30 +1,23 @@
 import org.junit.jupiter.api.Test;
-import pl.edu.pwr.gson.GeneDecoder;
+import pl.edu.pwr.gson.GeneEnum;
 import pl.edu.pwr.simulation.genetics.Genotype;
 import pl.edu.pwr.simulation.genetics.GenotypeBuilder;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class GeneDecoderTest {
-    GeneDecoder geneDecoder = new GeneDecoder();
+public class GeneEnumTest {
     Genotype genotype =  new GenotypeBuilder()
             .withSkinColor(1)
             .withGender(0)
             .withHairColor(3)
             .withEyeColor(0)
             .build();
-    @Test
-    public void blackManWithWhiteHairAndBlueEyes(){
-        String[] correctData = {"Black", "Male", "White", "Blue"};
-
-    }
 
     @Test
     public void genderDecodeTest(){
         String correctGender = "Male";
 
-        String decodedGender = geneDecoder.decodeGender(genotype.getGender().getGeneData());
+        String decodedGender = GeneEnum.genderFromValue(genotype.getGender().getGeneData()).toString();
 
         assertEquals(correctGender, decodedGender, "Gender Decoder Problem!");
     }
@@ -32,7 +25,7 @@ public class GeneDecoderTest {
     public void skinColorDecodeTest(){
         String correctSkinColor = "Black";
 
-        String decodedSkinColor = geneDecoder.decodeSkinColor(genotype.getSkinColor().getGeneData());
+        String decodedSkinColor = GeneEnum.skinColorFromValue(genotype.getSkinColor().getGeneData()).toString();
 
         assertEquals(correctSkinColor, decodedSkinColor, "Gender Decoder Problem!");
     }
@@ -40,7 +33,7 @@ public class GeneDecoderTest {
     public void hairColorDecodeTest(){
         String correctHairColor = "White";
 
-        String decodedHairColor = geneDecoder.decodeHairColor(genotype.getHairColor().getGeneData());
+        String decodedHairColor = GeneEnum.hairColorFromValue(genotype.getHairColor().getGeneData()).toString();
 
         assertEquals(correctHairColor, decodedHairColor, "Gender Decoder Problem!");
     }
@@ -48,7 +41,7 @@ public class GeneDecoderTest {
     public void eyeColorDecodeTest(){
         String correctEyeColor = "Blue";
 
-        String decodedEyeColor = geneDecoder.decodeEyeColor(genotype.getEyeColor().getGeneData());
+        String decodedEyeColor = GeneEnum.eyeColorFromValue(genotype.getEyeColor().getGeneData()).toString();
 
         assertEquals(correctEyeColor, decodedEyeColor, "Gender Decoder Problem!");
     }

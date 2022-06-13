@@ -7,12 +7,21 @@ public class Person {
     private Genotype genotype;
     private Person partner = null;
 
-    public Person(int age, Genotype genotype){
+    public Person(int age, Genotype genotype) {
         this.age = age;
         this.genotype = genotype;
     }
     public boolean isAdult(){
         return this.age>=18;
+    }
+    public boolean isYoungAdult(){
+        return this.isAdult() && this.age<35;
+    }
+    public boolean isMiddleAged(){
+        return this.age>=35 && this. age<40;
+    }
+    public boolean isElderlyAged(){
+        return this.age>=40 && this.age<50;
     }
     public void increaseAge(){
         this.age++;
@@ -34,5 +43,8 @@ public class Person {
     }
     public int getGender(){
         return this.genotype.getGender().getGeneData();
+    }
+    public boolean is(int genderValue){
+        return this.getGender() == genderValue;
     }
 }

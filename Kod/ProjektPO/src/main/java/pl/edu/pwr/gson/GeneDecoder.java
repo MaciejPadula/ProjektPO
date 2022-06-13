@@ -7,7 +7,7 @@ public class GeneDecoder {
     private String[] eyeColorGenes = {"Blue", "Brown", "Green", "Red"};
     private String[] hairColorGenes = {"Blond", "Brown", "Auburn", "White"};
     public String decodeGender(int val){
-        return genderGenes[val];
+        return GeneEnum.genderFromValue(val).toString();
     }
     public String decodeSkinColor(int val){
         return skinColorGenes[val];

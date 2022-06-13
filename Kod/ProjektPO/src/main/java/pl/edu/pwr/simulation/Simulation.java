@@ -2,6 +2,7 @@ package pl.edu.pwr.simulation;
 
 import pl.edu.pwr.simulation.agents.Person;
 import pl.edu.pwr.simulation.agents.PersonBuilder;
+import pl.edu.pwr.simulation.events.IEvent;
 import pl.edu.pwr.simulation.events.Killer;
 import pl.edu.pwr.simulation.events.Matchmaker;
 import pl.edu.pwr.simulation.events.Pregnancy;
@@ -12,19 +13,17 @@ import java.util.List;
 
 public class Simulation {
     private final ISimulationDumper simulationDumper;
-    private final Matchmaker matchmaker;
-    private final Pregnancy pregnancy;
-    private final Killer killer;
+    private final List<IEvent> events;
     private List<Person> personList;
     private final int numberOfEpoch;
 
-    public Simulation(ISimulationDumper simulationOutput, int percentageOfMatch,
-                      int percentageOfPregnancy, int percentageOfGeneDegradation,
-                      int percentageOfDeath, int numberOfPeople, int numberOfEpoch
+    public Simulation(ISimulationDumper simulationOutput,
+                      List<IEvent> listOfEvents,
+                      int numberOfPeople,
+                      int numberOfEpoch
     ) {
-        this.matchmaker = new Matchmaker(percentageOfMatch);
-        this.pregnancy = new Pregnancy(percentageOfPregnancy, percentageOfGeneDegradation);
-        this.killer = new Killer(percentageOfDeath);
+        events = new ArrayList<>();
+        events.addAll(listOfEvents);
         this.simulationDumper = simulationOutput;
         this.numberOfEpoch = numberOfEpoch;
         this.personList = new ArrayList<>();
@@ -39,9 +38,7 @@ public class Simulation {
     }
     private void epoch(int epochIndex){
         this.personList.forEach(person -> person.increaseAge());
-        this.personList = this.killer.happen(this.personList);
-        this.personList = this.pregnancy.happen(this.personList);
-        this.personList = this.matchmaker.happen(this.personList);
+        this.events.forEach(event -> this.personList = event.happen(this.personList));
         System.out.println(epochIndex + " => "+this.personList.size());
     }
     public void dumpData(){

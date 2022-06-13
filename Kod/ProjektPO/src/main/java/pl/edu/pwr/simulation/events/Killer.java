@@ -6,8 +6,8 @@ import pl.edu.pwr.simulation.utils.Probability;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Killer {
-    int percentageOfDeath=0;
+public class Killer implements IEvent{
+    int percentageOfDeath;
 
     public Killer(int percentageOfDeath) {
         this.percentageOfDeath = percentageOfDeath;

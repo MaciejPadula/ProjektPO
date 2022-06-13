@@ -14,10 +14,10 @@ public class GenotypeJsonObject {
     public GenotypeJsonObject(Person person){
         Genotype genotype = person.getGenotype();
         GeneDecoder geneDecoder = new GeneDecoder();
-        this.gender = geneDecoder.decodeGender(genotype.getGender().getGeneData());
-        this.skinColor = geneDecoder.decodeSkinColor(genotype.getSkinColor().getGeneData());
-        this.hairColor = geneDecoder.decodeHairColor(genotype.getHairColor().getGeneData());
-        this.eyeColor = geneDecoder.decodeEyeColor(genotype.getEyeColor().getGeneData());
+        this.gender = GeneEnum.genderFromValue(genotype.getGender().getGeneData()).toString();
+        this.skinColor = GeneEnum.skinColorFromValue(genotype.getSkinColor().getGeneData()).toString();
+        this.hairColor = GeneEnum.eyeColorFromValue(genotype.getHairColor().getGeneData()).toString();
+        this.eyeColor = GeneEnum.hairColorFromValue(genotype.getEyeColor().getGeneData()).toString();
         this.height = genotype.getHeight().getGeneData();
         this.maxAge = genotype.getMaxAge().getGeneData();
         this.age = person.getAge();

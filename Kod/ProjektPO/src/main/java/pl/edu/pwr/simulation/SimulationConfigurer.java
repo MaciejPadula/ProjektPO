@@ -3,11 +3,15 @@ package pl.edu.pwr.simulation;
 import com.typesafe.config.Config;
 import com.typesafe.config.ConfigFactory;
 import pl.edu.pwr.app.settings.ApplicationSettings;
+import pl.edu.pwr.simulation.events.Killer;
+import pl.edu.pwr.simulation.events.Matchmaker;
+import pl.edu.pwr.simulation.events.Pregnancy;
 import pl.edu.pwr.simulation.output.ConsoleDumper;
 import pl.edu.pwr.simulation.output.FileDumper;
 import pl.edu.pwr.simulation.output.ISimulationDumper;
 
 import java.io.File;
+import java.util.Arrays;
 
 public class SimulationConfigurer {
     public static Simulation configure(){
@@ -27,10 +31,13 @@ public class SimulationConfigurer {
         }
 
         return new Simulation(simulationDumper,
-                applicationSettings.getPercentageOfMatch(),
-                applicationSettings.getPercentageOfPregnancy(),
-                applicationSettings.getPercentageOfGeneDegradation(),
-                applicationSettings.getPercentageOfDeath(),
+                Arrays.asList(
+                        new Killer(applicationSettings.getPercentageOfDeath()),
+                        new Matchmaker(applicationSettings.getPercentageOfMatch()),
+                        new Pregnancy(applicationSettings.getPercentageOfPregnancy(),
+                                applicationSettings.getPercentageOfGeneDegradation()
+                        )
+                ),
                 applicationSettings.getNumberOfPeople(),
                 applicationSettings.getNumberOfEpoch()
         );

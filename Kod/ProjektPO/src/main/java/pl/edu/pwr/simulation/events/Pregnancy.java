@@ -9,9 +9,9 @@ import pl.edu.pwr.simulation.utils.Probability;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Pregnancy {
+public class Pregnancy implements IEvent{
     private GenotypeMerge genotypeMerge;
-    int percentageOfPregnancy = 0;
+    int percentageOfPregnancy;
 
     public Pregnancy(int percentageOfPregnancy, int percentageOfGeneDegradation) {
         this.genotypeMerge = new GenotypeMerge(percentageOfGeneDegradation);
@@ -38,22 +38,19 @@ public class Pregnancy {
     }
     private boolean pregnancyChance(Person person)
     {
-        if(person.getGender()==Gender.unknown || person.getPartner().getGender()== Gender.unknown){
+        if(person.is(Gender.unknown) || person.getPartner().is(Gender.unknown)){
             return false;
         }
-        Person female;
-        if(person.getGender()!=person.getPartner().getGender()){
-            if(person.getGender()==Gender.female) {
-                female = person;
-            }
-            else{
+        Person female = person;
+        if(!person.is(person.getPartner().getGender())){
+            if(female.is(Gender.male)) {
                 female = person.getPartner();
             }
-            if(female.isAdult() && female.getAge()<35){
+            if(female.isYoungAdult()){
                 return Probability.getOutcome(this.percentageOfPregnancy);
-            }else if( female.getAge()>=35 && female.getAge()<40){
+            }else if(female.isMiddleAged()){
                 return Probability.getOutcome((this.percentageOfPregnancy)/2);
-            }else if(female.getAge()>=40 && female.getAge()<50){
+            }else if(female.isElderlyAged()){
                 return Probability.getOutcome((this.percentageOfPregnancy)/5);
             }
         }

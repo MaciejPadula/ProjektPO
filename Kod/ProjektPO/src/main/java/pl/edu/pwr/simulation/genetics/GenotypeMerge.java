@@ -5,7 +5,7 @@ import pl.edu.pwr.simulation.utils.Probability;
 import java.util.Random;
 
 public class GenotypeMerge {
-    int percentageOfGeneDegradation = 0;
+    int percentageOfGeneDegradation;
 
     public GenotypeMerge(int percentageOfGeneDegradation) {
         this.percentageOfGeneDegradation = percentageOfGeneDegradation;

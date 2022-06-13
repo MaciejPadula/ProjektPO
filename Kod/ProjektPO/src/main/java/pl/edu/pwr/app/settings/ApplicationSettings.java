@@ -25,9 +25,7 @@ public class ApplicationSettings {
     public int getNumberOfPeople() {
     return numberOfPeople;
     }
-    public String getOutputFile(){
-        return outputFile;
-    }
+    public String getOutputFile(){return outputFile;}
     public int getPercentageOfDeath(){
         return percentageOfDeath;
     }
