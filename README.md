@@ -1,6 +1,23 @@
-# ProjektPO
-<div style="text-align: justify;">
-  Na zajęcia laboratoryjne z kursu Programowanie Obiektowe zostaliśmy poproszenia o wymyślenie dwóch tematów symulacji jakiegokolwiek wycinka rzeczywistości, oraz o    ich opisanie. Jeden z tematów zostanie wybrany przez prowadzącego, a następnie przez nas wdrożony. <br/>
-  Projektem będzie symulacja napisana w języku Java z wykorzystaniem narzędzia do automatycznej kompilacji gradle. Etapy projektu będą umieszczane na koncie github:
-  <a href="https://github.com/MaciejPadula/ProjektPO">MaciejPadula</a>
-</div>
+# OOP Project
+The subject of this project is a human genotype and gene mixing. Every person has unique features like hair color or skin tone. Simulation creates specified number of random people and matches them. During epoch couple that meet requirements can give birth to a new person with combined features of its parents. <br/>
+To run simulation download files from Releases and enter: <br/>
+```bash
+java -jar ProjektPO-x.x.jar
+```
+This will run the simulation and display number of epoch next to the number of people that are alive: <br/>
+```bash
+1 => 30
+```
+To customize your simulation create file application.json with JSON structure as below: <br/>
+```json
+{
+  "numberOfEpoch": 150,
+  "numberOfPeople": 30,
+  "fileOutputEnabled": true,
+  "outputFile": "output.json",
+  "percentageOfDeath": 50,
+  "percentageOfMatch": 20,
+  "percentageOfGeneDegradation": 80,
+  "percentageOfPregnancy": 30
+}
+```
