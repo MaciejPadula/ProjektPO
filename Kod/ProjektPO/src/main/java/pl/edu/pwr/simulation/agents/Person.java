@@ -4,7 +4,7 @@ import pl.edu.pwr.simulation.genetics.Genotype;
 
 public class Person {
     private int age;
-    private Genotype genotype;
+    private final Genotype genotype;
     private Person partner = null;
 
     public Person(int age, Genotype genotype) {

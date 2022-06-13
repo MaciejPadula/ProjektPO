@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Killer implements IEvent{
-    int percentageOfDeath;
+    private final int percentageOfDeath;
 
     public Killer(int percentageOfDeath) {
         this.percentageOfDeath = percentageOfDeath;

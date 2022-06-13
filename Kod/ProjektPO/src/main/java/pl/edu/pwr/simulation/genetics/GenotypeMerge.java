@@ -5,7 +5,7 @@ import pl.edu.pwr.simulation.utils.Probability;
 import java.util.Random;
 
 public class GenotypeMerge {
-    int percentageOfGeneDegradation;
+    private final int percentageOfGeneDegradation;
 
     public GenotypeMerge(int percentageOfGeneDegradation) {
         this.percentageOfGeneDegradation = percentageOfGeneDegradation;
@@ -18,8 +18,8 @@ public class GenotypeMerge {
         heightGene = randomGene(genotype1.getHeight(), genotype2.getHeight());
         skinColorGene = randomGene(genotype1.getSkinColor(), genotype2.getSkinColor());
         genderGene = randomGene(genotype1.getGender(), genotype2.getGender());
-        int minAge = genotype1.getMaxAge().getGeneData()
-                , maxAge = genotype2.getMaxAge().getGeneData();
+
+        int minAge = genotype1.getMaxAge().getGeneData(), maxAge = genotype2.getMaxAge().getGeneData();
         if(minAge>maxAge){
             int age = minAge;
             minAge = maxAge;
@@ -30,7 +30,7 @@ public class GenotypeMerge {
         ));
 
         if(coverage(genotype1, genotype2)>= this.percentageOfGeneDegradation){
-            genderGene = 2;
+            genderGene = Gender.unknown;
         }
         return new GenotypeBuilder()
                 .withGender(genderGene)
@@ -67,8 +67,8 @@ public class GenotypeMerge {
     }
     private int randomGene(Gene gene1, Gene gene2) {
         if (Probability.getOutcome(50)) {
-            return (gene1.getGeneData());
+            return gene1.getGeneData();
         }
-        return (gene2.getGeneData());
+        return gene2.getGeneData();
     }
 }

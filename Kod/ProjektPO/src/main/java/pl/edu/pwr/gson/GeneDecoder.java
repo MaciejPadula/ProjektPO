@@ -1,21 +1,28 @@
 package pl.edu.pwr.gson;
 
 
+import pl.edu.pwr.gson.enums.EyeColorEnum;
+import pl.edu.pwr.gson.enums.GenderEnum;
+import pl.edu.pwr.gson.enums.HairColorEnum;
+import pl.edu.pwr.gson.enums.SkinColorEnum;
+import pl.edu.pwr.simulation.genetics.Genotype;
+
 public class GeneDecoder {
-    private String[] genderGenes = {"Male", "Female", "Unknown"};
-    private String[] skinColorGenes = {"White", "Black", "Asian"};
-    private String[] eyeColorGenes = {"Blue", "Brown", "Green", "Red"};
-    private String[] hairColorGenes = {"Blond", "Brown", "Auburn", "White"};
-    public String decodeGender(int val){
-        return GeneEnum.genderFromValue(val).toString();
+    private final Genotype genotype;
+
+    public GeneDecoder(Genotype genotype) {
+        this.genotype = genotype;
     }
-    public String decodeSkinColor(int val){
-        return skinColorGenes[val];
+    public GenderEnum decodeGender(){
+        return GenderEnum.values()[genotype.getGender().getGeneData()];
     }
-    public String decodeEyeColor(int val){
-        return eyeColorGenes[val];
+    public SkinColorEnum decodeSkinColor(){
+        return SkinColorEnum.values()[genotype.getSkinColor().getGeneData()];
     }
-    public String decodeHairColor(int val){
-        return hairColorGenes[val];
+    public EyeColorEnum decodeEyeColor(){
+        return EyeColorEnum.values()[genotype.getEyeColor().getGeneData()];
+    }
+    public HairColorEnum decodeHairColor(){
+        return HairColorEnum.values()[genotype.getHairColor().getGeneData()];
     }
 }

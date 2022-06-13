@@ -6,7 +6,7 @@ import pl.edu.pwr.simulation.utils.Probability;
 import java.util.List;
 
 public class Matchmaker implements IEvent{
-    int percentageOfMatch;
+    private final int percentageOfMatch;
 
     public Matchmaker(int percentageOfMatch) {
         this.percentageOfMatch = percentageOfMatch;

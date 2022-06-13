@@ -3,9 +3,6 @@ package pl.edu.pwr.simulation;
 import pl.edu.pwr.simulation.agents.Person;
 import pl.edu.pwr.simulation.agents.PersonBuilder;
 import pl.edu.pwr.simulation.events.IEvent;
-import pl.edu.pwr.simulation.events.Killer;
-import pl.edu.pwr.simulation.events.Matchmaker;
-import pl.edu.pwr.simulation.events.Pregnancy;
 import pl.edu.pwr.simulation.output.ISimulationDumper;
 
 import java.util.ArrayList;

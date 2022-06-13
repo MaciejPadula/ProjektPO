@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Pregnancy implements IEvent{
-    private GenotypeMerge genotypeMerge;
-    int percentageOfPregnancy;
+    private final GenotypeMerge genotypeMerge;
+    private final int percentageOfPregnancy;
 
     public Pregnancy(int percentageOfPregnancy, int percentageOfGeneDegradation) {
         this.genotypeMerge = new GenotypeMerge(percentageOfGeneDegradation);
