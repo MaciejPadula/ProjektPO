@@ -1,7 +1,6 @@
 package pl.edu.pwr.simulation.events;
 
-import pl.edu.pwr.app.settings.ApplicationSettings;
-import pl.edu.pwr.simulation.Person;
+import pl.edu.pwr.simulation.agents.Person;
 import pl.edu.pwr.simulation.utils.Probability;
 
 import java.util.List;
@@ -12,7 +11,7 @@ public class Matchmaker {
     public Matchmaker(int percentageOfMatch) {
         this.percentageOfMatch = percentageOfMatch;
     }
-    public void matchAll(List<Person> personList){
+    public List<Person> happen(List<Person> personList){
         personList.forEach(person1 -> {
             personList.forEach(person2 -> {
                 if(!person1.hasPartner() && !person2.hasPartner() && person1!=person2){
@@ -20,6 +19,7 @@ public class Matchmaker {
                 }
             });
         });
+        return personList;
     }
     private void match(Person person1, Person person2){
         if(Probability.getOutcome(this.percentageOfMatch)){

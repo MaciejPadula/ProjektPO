@@ -1,6 +1,6 @@
 package pl.edu.pwr.gson;
 
-import pl.edu.pwr.simulation.Person;
+import pl.edu.pwr.simulation.agents.Person;
 import pl.edu.pwr.simulation.genetics.Genotype;
 
 public class GenotypeJsonObject {

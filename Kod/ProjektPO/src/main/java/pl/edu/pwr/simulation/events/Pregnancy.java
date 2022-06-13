@@ -1,8 +1,9 @@
 package pl.edu.pwr.simulation.events;
 
-import pl.edu.pwr.simulation.Gender;
+import pl.edu.pwr.simulation.genetics.Gender;
+import pl.edu.pwr.simulation.agents.PersonBuilder;
 import pl.edu.pwr.simulation.genetics.GenotypeMerge;
-import pl.edu.pwr.simulation.Person;
+import pl.edu.pwr.simulation.agents.Person;
 import pl.edu.pwr.simulation.utils.Probability;
 
 import java.util.ArrayList;
@@ -16,7 +17,7 @@ public class Pregnancy {
         this.genotypeMerge = new GenotypeMerge(percentageOfGeneDegradation);
         this.percentageOfPregnancy = percentageOfPregnancy;
     }
-    public List<Person> getNewborn(List<Person> personList){
+    public List<Person> happen(List<Person> personList){
         List<Person> people = new ArrayList<>();
         personList.forEach(person -> {
             if(person.getPartner()!=null){
@@ -32,7 +33,8 @@ public class Pregnancy {
             }
             people.remove(person.getPartner());
         });
-        return newborn;
+        personList.addAll(newborn);
+        return personList;
     }
     private boolean pregnancyChance(Person person)
     {
@@ -58,12 +60,11 @@ public class Pregnancy {
         return false;
     }
     private Person pregnancy(Person person){
-        return new Person(
-        0,
+        return new PersonBuilder().withGenotype(
             this.genotypeMerge.mergeGenotype(
                 person.getGenotype(),
                 person.getPartner().getGenotype()
             )
-        );
+        ).build();
     }
 }

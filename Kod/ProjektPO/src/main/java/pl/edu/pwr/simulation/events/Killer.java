@@ -1,7 +1,6 @@
 package pl.edu.pwr.simulation.events;
 
-import pl.edu.pwr.app.settings.ApplicationSettings;
-import pl.edu.pwr.simulation.Person;
+import pl.edu.pwr.simulation.agents.Person;
 import pl.edu.pwr.simulation.utils.Probability;
 
 import java.util.ArrayList;
@@ -13,7 +12,7 @@ public class Killer {
     public Killer(int percentageOfDeath) {
         this.percentageOfDeath = percentageOfDeath;
     }
-    public List<Person> survivors(List<Person> personList){
+    public List<Person> happen(List<Person> personList){
         List<Person> newPersonList = new ArrayList<>();
         personList.forEach(person -> {
             if(person.getAge() <= person

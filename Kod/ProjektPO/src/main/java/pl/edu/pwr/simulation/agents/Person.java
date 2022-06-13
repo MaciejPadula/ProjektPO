@@ -1,4 +1,4 @@
-package pl.edu.pwr.simulation;
+package pl.edu.pwr.simulation.agents;
 
 import pl.edu.pwr.simulation.genetics.Genotype;
 

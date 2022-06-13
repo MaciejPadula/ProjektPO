@@ -2,7 +2,7 @@ package pl.edu.pwr.gson;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import pl.edu.pwr.simulation.Person;
+import pl.edu.pwr.simulation.agents.Person;
 
 import java.util.ArrayList;
 import java.util.List;

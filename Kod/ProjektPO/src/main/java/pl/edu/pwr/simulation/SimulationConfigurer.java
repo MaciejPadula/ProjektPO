@@ -26,7 +26,13 @@ public class SimulationConfigurer {
             simulationDumper = new ConsoleDumper();
         }
 
-        Simulation simulation = new Simulation(applicationSettings, simulationDumper);
-        return simulation;
+        return new Simulation(simulationDumper,
+                applicationSettings.getPercentageOfMatch(),
+                applicationSettings.getPercentageOfPregnancy(),
+                applicationSettings.getPercentageOfGeneDegradation(),
+                applicationSettings.getPercentageOfDeath(),
+                applicationSettings.getNumberOfPeople(),
+                applicationSettings.getNumberOfEpoch()
+        );
     }
 }
