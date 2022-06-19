@@ -12,8 +12,15 @@ import pl.edu.pwr.simulation.output.ISimulationDumper;
 
 import java.io.File;
 import java.util.Arrays;
-
+/**
+ * Simulation Factory
+ */
 public class SimulationConfigurer {
+    private SimulationConfigurer(){}
+    /**
+     * This static method reads configuration from file and handles creating new simulation instance
+     * @return Configured simulation
+     */
     public static Simulation configure(){
         Config baseConfig = ConfigFactory.load();
         Config config = ConfigFactory

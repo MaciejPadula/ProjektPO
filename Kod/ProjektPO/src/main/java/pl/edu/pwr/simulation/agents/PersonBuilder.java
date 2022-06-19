@@ -5,6 +5,9 @@ import pl.edu.pwr.simulation.genetics.GenotypeBuilder;
 
 import java.util.Random;
 
+/**
+ * This class creates new person with specified values
+ */
 public class PersonBuilder {
     private int age;
     private Genotype genotype;

@@ -1,6 +1,12 @@
-package pl.edu.pwr.simulation.genetics;
+package pl.edu.pwr.simulation.utils;
+
+import pl.edu.pwr.simulation.genetics.Gene;
 
 import java.util.Random;
+
+/**
+ * Class that randomizes agents traits
+ */
 
 public class GeneUtils {
     public static Gene randomGender(){
