@@ -32,7 +32,7 @@ public class Simulation {
         }
     }
     private void epoch(int epochIndex){
-        this.personList.forEach(person -> person.increaseAge());
+        this.personList.forEach(Person::increaseAge);
         this.events.forEach(event -> this.personList = event.happen(this.personList));
     }
     public void dumpData(){
