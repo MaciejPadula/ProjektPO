@@ -7,21 +7,13 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
-/**
- * This class handle dumping data to file
- */
+
 public class FileDumper implements ISimulationDumper {
     private final String fileName;
-    /**
-     * @param fileName Name of file to which data will be written
-     */
+
     public FileDumper(String fileName) {
         this.fileName = fileName;
     }
-    /**
-     * This method dumps data to file of injected filename
-     * @param personList List of people
-     */
     @Override
     public void dumpData(List<Person> personList){
         GenotypeObjectToJsonStringConverter genotypeObjectRepository = new GenotypeObjectToJsonStringConverter();

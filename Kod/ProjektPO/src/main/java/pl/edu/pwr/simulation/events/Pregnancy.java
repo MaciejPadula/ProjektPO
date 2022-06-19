@@ -8,18 +8,11 @@ import pl.edu.pwr.simulation.utils.Probability;
 
 import java.util.ArrayList;
 import java.util.List;
-/**
- * Class that allows women to get pregnant
- */
 
 public class Pregnancy implements IEvent{
     private final GenotypeMerge genotypeMerge;
     private final int percentageOfPregnancy;
-    /**
-     * Pregnancy constructor.
-     * @param percentageOfPregnancy Percentage change of female pregnancy
-     * @param percentageOfGeneDegradation Percentage of gene coverage that breaks gene
-     */
+
     public Pregnancy(int percentageOfPregnancy, int percentageOfGeneDegradation) {
         this.genotypeMerge = new GenotypeMerge(percentageOfGeneDegradation);
         this.percentageOfPregnancy = percentageOfPregnancy;

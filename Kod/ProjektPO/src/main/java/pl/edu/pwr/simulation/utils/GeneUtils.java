@@ -4,10 +4,6 @@ import pl.edu.pwr.simulation.genetics.Gene;
 
 import java.util.Random;
 
-/**
- * Class that randomizes agents traits
- */
-
 public class GeneUtils {
     public static Gene randomGender(){
         return new Gene(new Random().nextInt(2));

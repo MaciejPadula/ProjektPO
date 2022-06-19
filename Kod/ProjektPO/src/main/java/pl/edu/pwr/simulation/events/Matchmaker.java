@@ -3,16 +3,10 @@ package pl.edu.pwr.simulation.events;
 import pl.edu.pwr.simulation.agents.Person;
 import pl.edu.pwr.simulation.utils.Probability;
 import java.util.List;
-/**
- * Class that allows people to match into pairs
- */
 
 public class Matchmaker implements IEvent{
     private final int percentageOfMatch;
-    /**
-     * Matchmaker constructor
-     * @param percentageOfMatch Percentage change of couple match
-     */
+
     public Matchmaker(int percentageOfMatch) {
         this.percentageOfMatch = percentageOfMatch;
     }

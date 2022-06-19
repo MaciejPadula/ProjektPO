@@ -2,9 +2,6 @@ package pl.edu.pwr.simulation.genetics;
 
 import pl.edu.pwr.simulation.utils.GeneUtils;
 
-/**
- * Class that builds specific genotype (set of traits)
- */
 public class GenotypeBuilder {
     private Gene gender = GeneUtils.randomGender();
     private Gene skinColor = GeneUtils.randomSkinColor();

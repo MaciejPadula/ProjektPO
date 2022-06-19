@@ -9,21 +9,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
-/**
- * Main simulation class
- */
 public class Simulation {
     private final ISimulationDumper simulationDumper;
     private final List<IEvent> events;
     private List<Person> personList;
     private final int numberOfEpoch;
-    /**
-     * This method is responsible for handling all events included in the constructor
-     * @param simulationOutput Interface that handles dumping data
-     * @param listOfEvents list of events
-     * @param numberOfEpoch number of epoch that simulation will simulate
-     * @param numberOfPeople number of people before simulation start
-     */
+
     public Simulation(ISimulationDumper simulationOutput,
                       List<IEvent> listOfEvents,
                       int numberOfPeople,
@@ -35,9 +26,6 @@ public class Simulation {
         this.numberOfEpoch = numberOfEpoch;
         this.personList = PersonUtils.randomizeListOfPerson(numberOfPeople);
     }
-    /**
-     * This method starts the simulation.
-     */
     public void simulate(){
         for(int i = 0; i< numberOfEpoch; ++i){
             epoch(i+1);
@@ -47,9 +35,6 @@ public class Simulation {
         this.personList.forEach(person -> person.increaseAge());
         this.events.forEach(event -> this.personList = event.happen(this.personList));
     }
-    /**
-     * This method dumps data returned from simulation to output injected in the constructor.
-     */
     public void dumpData(){
         this.simulationDumper.dumpData(this.personList);
     }

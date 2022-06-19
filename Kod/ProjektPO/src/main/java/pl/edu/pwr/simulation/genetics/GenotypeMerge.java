@@ -3,21 +3,13 @@ package pl.edu.pwr.simulation.genetics;
 import pl.edu.pwr.simulation.utils.Probability;
 
 import java.util.Random;
-/**
- * Class that merges genotypes and checks coverage of genotypes
- */
+
 public class GenotypeMerge {
     private final int percentageOfGeneDegradation;
 
     public GenotypeMerge(int percentageOfGeneDegradation) {
         this.percentageOfGeneDegradation = percentageOfGeneDegradation;
     }
-    /**
-     * This method allows to merge genotypes of two agents
-     * @param genotype1 genotype of first agent
-     * @param genotype2 genotype of second agent
-     * @return new genotype being a mix of two given genotypes
-     */
     public Genotype mergeGenotype(Genotype genotype1, Genotype genotype2) {
         int eyeColorGene, genderGene, hairColorGene, heightGene, maxAgeGene, skinColorGene;
 
@@ -49,12 +41,6 @@ public class GenotypeMerge {
                 .withSkinColor(skinColorGene)
                 .build();
     }
-    /**
-     * This method checks the similarity of two genotypes
-     * @param genotype1 genotype of first agent
-     * @param genotype2 genotype of second agent
-     * @return coverage of genotypes in percents
-     */
     public int coverage(Genotype genotype1, Genotype genotype2){
         int[] coverPercentage={0,0};
 
