@@ -10,6 +10,7 @@ To customize your simulation create file application.json with JSON structure as
 {
   "numberOfEpoch": 150,
   "numberOfPeople": 30,
+  "verbose": true,
   "fileOutputEnabled": true,
   "outputFile": "output.json",
   "percentageOfDeath": 50,
