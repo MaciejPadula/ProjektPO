@@ -10,6 +10,7 @@ public class ApplicationSettings {
     private final int percentageOfMatch;
     private final int percentageOfGeneDegradation;
     private final int percentageOfPregnancy;
+    private final boolean verbose;
     public ApplicationSettings(Config config) {
         this.numberOfEpoch = config.getInt("numberOfEpoch");
         this.numberOfPeople = config.getInt("numberOfPeople");
@@ -18,6 +19,7 @@ public class ApplicationSettings {
         this.percentageOfMatch = config.getInt("percentageOfMatch");
         this.percentageOfGeneDegradation = config.getInt("percentageOfGeneDegradation");
         this.percentageOfPregnancy = config.getInt("percentageOfPregnancy");
+        this.verbose = config.getBoolean("verbose");
     }
     public int getNumberOfEpoch() {
     return numberOfEpoch;
@@ -37,5 +39,8 @@ public class ApplicationSettings {
     }
     public int getPercentageOfPregnancy() {
         return percentageOfPregnancy;
+    }
+    public boolean getVerbose() {
+        return verbose;
     }
 }

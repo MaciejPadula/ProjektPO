@@ -9,6 +9,7 @@ import pl.edu.pwr.simulation.events.Pregnancy;
 import pl.edu.pwr.simulation.output.ConsoleDumper;
 import pl.edu.pwr.simulation.output.FileDumper;
 import pl.edu.pwr.simulation.output.ISimulationDumper;
+import pl.edu.pwr.simulation.utils.SimulationPrinter;
 
 import java.io.File;
 import java.util.Arrays;
@@ -30,7 +31,9 @@ public class SimulationConfigurer {
             simulationDumper = new ConsoleDumper();
         }
 
-        return new Simulation(simulationDumper,
+        return new Simulation(
+                simulationDumper,
+                new SimulationPrinter(applicationSettings.getVerbose()),
                 Arrays.asList(
                         new Killer(applicationSettings.getPercentageOfDeath()),
                         new Matchmaker(applicationSettings.getPercentageOfMatch()),
