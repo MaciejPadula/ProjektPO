@@ -4,10 +4,7 @@ To run simulation download files from Releases and enter: <br/>
 ```bash
 java -jar ProjektPO-x.x.jar
 ```
-This will run the simulation and display number of epoch next to the number of people that are alive: <br/>
-```bash
-1 => 30
-```
+This will run the simulation and dump data to selected output. <br/>
 To customize your simulation create file application.json with JSON structure as below: <br/>
 ```json
 {
