@@ -153,7 +153,8 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(pl.edu.pwr.simulation.output.ISimulationDumper,java.util.List,int,int)">Simulation</a></span>&#8203;(<a href="output/ISimulationDumper.html" title="interface in pl.edu.pwr.simulation.output">ISimulationDumper</a>&nbsp;simulationOutput,
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(pl.edu.pwr.simulation.output.ISimulationDumper,pl.edu.pwr.simulation.utils.SimulationPrinter,java.util.List,int,int)">Simulation</a></span>&#8203;(<a href="output/ISimulationDumper.html" title="interface in pl.edu.pwr.simulation.output">ISimulationDumper</a>&nbsp;simulationOutput,
+          <a href="utils/SimulationPrinter.html" title="class in pl.edu.pwr.simulation.utils">SimulationPrinter</a>&nbsp;simulationPrinter,
           java.util.List&lt;<a href="events/IEvent.html" title="interface in pl.edu.pwr.simulation.events">IEvent</a>&gt;&nbsp;listOfEvents,
           int&nbsp;numberOfPeople,
           int&nbsp;numberOfEpoch)</code></th>
@@ -217,13 +218,14 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a id="&lt;init&gt;(pl.edu.pwr.simulation.output.ISimulationDumper,java.util.List,int,int)">
+<a id="&lt;init&gt;(pl.edu.pwr.simulation.output.ISimulationDumper,pl.edu.pwr.simulation.utils.SimulationPrinter,java.util.List,int,int)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>Simulation</h4>
 <pre>public&nbsp;Simulation&#8203;(<a href="output/ISimulationDumper.html" title="interface in pl.edu.pwr.simulation.output">ISimulationDumper</a>&nbsp;simulationOutput,
+                  <a href="utils/SimulationPrinter.html" title="class in pl.edu.pwr.simulation.utils">SimulationPrinter</a>&nbsp;simulationPrinter,
                   java.util.List&lt;<a href="events/IEvent.html" title="interface in pl.edu.pwr.simulation.events">IEvent</a>&gt;&nbsp;listOfEvents,
                   int&nbsp;numberOfPeople,
                   int&nbsp;numberOfEpoch)</pre>
@@ -234,6 +236,7 @@ extends java.lang.Object</pre>
 <dd><code>listOfEvents</code> - list of events</dd>
 <dd><code>numberOfEpoch</code> - number of epoch that simulation will simulate</dd>
 <dd><code>numberOfPeople</code> - number of people before simulation start</dd>
+<dd><code>simulationPrinter</code> - Class that handles printing data</dd>
 </dl>
 </li>
 </ul>
