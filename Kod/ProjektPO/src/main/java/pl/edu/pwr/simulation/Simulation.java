@@ -6,7 +6,6 @@ import pl.edu.pwr.simulation.events.IEvent;
 import pl.edu.pwr.simulation.output.ISimulationDumper;
 import pl.edu.pwr.simulation.utils.SimulationPrinter;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Simulation {
@@ -21,8 +20,7 @@ public class Simulation {
                       int numberOfPeople,
                       int numberOfEpoch
     ) {
-        events = new ArrayList<>();
-        events.addAll(listOfEvents);
+        this.events = listOfEvents;
         this.simulationPrinter = simulationPrinter;
         this.simulationDumper = simulationOutput;
         this.numberOfEpoch = numberOfEpoch;
